@@ -9,7 +9,6 @@ async function getTheWorks() {
 }
 getTheWorks();
 const gallery = document.querySelector(".gallery");
-
 function createWorks() {
     for (let i = 0; i < works.length; i++) {
       const newWork = document.createElement('figure');
@@ -18,7 +17,8 @@ function createWorks() {
       newWorkImg.src = works[i].imageUrl;
       const newWorkText = document.createElement('figcaption');
       newWorkText.innerHTML = works[i].title;
-      
+
+//***Réalisation du filtre des travaux***//
       newWork.setAttribute('categoryId', works[i].categoryId); //attribution d'un categoryId aux balises newWork pour pouvoir les filtrer
   
       gallery.appendChild(newWork); // rattachement aux div parents pour afficher les éléments sur la page
