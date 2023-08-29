@@ -9,15 +9,20 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
+	<script src="https://kit.fontawesome.com/65eadcf6ab.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <header>
+	<div class="mode-edition">
+		<i class="fa-regular fa-pen-to-square"><span>Mode édition</span></i>
+		<input type="button" id="publier-changements" value="publier les changements">
+	</div>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
 		<ul>
-			<li><a href="./index.html">projets</a></li>
+			<li><a href="#portfolio">projets</a></li>
 			<li><a href="#contact">contact</a></li>
-			<li><a href="./login.html">login</a></li>
+			<li id="loginButton"><a href="./login.html">login</a></li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -26,6 +31,7 @@
 	<section id="introduction">
 		<figure>
 			<img src="./assets/images/sophie-bluel.png" alt="">
+			<i class="fa-regular fa-pen-to-square"><span>modifier</span></i>
 		</figure>
 		<article>
 			<h2>Designer d'espace</h2>
@@ -36,8 +42,8 @@
 	</section>
 	<section id="portfolio">
 		<div class="portfolio-title">
-		<h2>Mes Projets</h2>
-		<a href="#myModal"><i class="fa-regular fa-pen-to-square" id="openModalButton"><span>modifier</span></i></a>
+			<h2>Mes Projets</h2>
+			<a href="#myModal"><i class="fa-regular fa-pen-to-square" id="openModalButton"><span>modifier</span></i></a>
 		</div>
 		<div class="filters">
 			<button class="filter-btn" id="tous">Tous</button>
@@ -46,6 +52,43 @@
 			<button class="filter-btn" id="hotelsRestaurants">Hôtels & restaurants</button>
 		  </div>
 		<div class="gallery">
+		</div>
+	</section>
+	<section id="myModal" class="modal">
+		<div class="modalContent" id="mediaListing">
+			<span class="closeModalButton"><i class='fa-solid fa-xmark fa-lg'></i></span>
+			<h3 class="modalTitle">Galerie Photo</h3>
+			<div class="modalGallery"></div>
+			<div class="modalGalleryBar"></div>
+			<input type="submit" value="Ajouter une photo" id="ajoutPhoto">
+			<p id="boutonSupprModal">Supprimer la galerie</p>
+		</div>
+		<div class="modalContent" id="addPhoto">
+			<span id="returnToMediaListing"><i class="fa-solid fa-arrow-left-long"></i></span> 
+			<span class="closeModalButton"><i class='fa-solid fa-xmark fa-lg'></i></span>
+			<h3 class="modalTitle">Ajout Photo</h3>
+			<form action="index.html" method="post" id="postNewPhotoForm" class="inputForm">
+				<div class="ajoutPhotoSpace" id="ajoutPhotoSpace">
+				<i class="fa-sharp fa-regular fa-image" id="iconeLandscape"></i>
+				<input type="file" name="image" id="plusAjoutPhoto" accept="image/png, image/jpg" class="inputForm" style="opacity: 0;">
+				<fieldset>
+					<legend id="legendAjoutPhoto">+ Ajouter Photo</legend>
+					<img id="imgToShow">
+				</fieldset>
+				<p id="tailleFichier">jpg, png : 4mo max</p>
+				</div>
+				<label for="titreAjoutPhoto">Titre</label>
+				<input type="text" name="title" id="titreAjoutPhoto" class="inputForm" cols="54" rows="1"></input>
+				<label for="categorieAjoutPhoto">Catégorie</label>
+				<select name="category" id="categorieAjoutPhoto" cols="60" rows="1">
+					<option value=""></option>
+					<option value=1>Objets</option>
+					<option value=2>Appartements</option>
+					<option value=3>Hôtels & restaurants</option>
+				</select>
+				<div class="modalGalleryBar"></div>
+				<input type="submit" value="Valider" id="validAjoutPhoto">
+			</form>
 		</div>
 	</section>
 	<section id="contact">
@@ -62,6 +105,7 @@
 		</form>
 	</section>
 </main>
+
 <footer>
 	<nav>
 		<ul>
@@ -69,6 +113,7 @@
 		</ul>
 	</nav>
 </footer>
-<script type="module" src="./script.js"></script>
+
+<script type="module" src="script.js"></script>
 </body>
 </html>
