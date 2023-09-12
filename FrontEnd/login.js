@@ -1,4 +1,5 @@
-import { apiURL } from "./apiURL.js";
+let apiURL = "http://localhost:5678/api/";
+
 const myForm = document.getElementById("myForm");
 
 async function postMyForm (mail, pass) {
