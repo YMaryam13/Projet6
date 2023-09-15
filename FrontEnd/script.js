@@ -91,6 +91,9 @@ if (userToken) { // changement du login en logout
   const modeEditionBandeau = document.querySelector(".mode-edition"); //affichage de la barre de modification
   modeEditionBandeau.style.display = "flex";
 
+  const filters = document.querySelector(".filters") //disparition de la partie filtre
+  filters.style.display = "none"
+
   loginButton.addEventListener('click', function() { // écouteur d'évènement pour retirer le token du localStorage au logout
     localStorage.removeItem('token');
     window.location.href = 'index.html';
@@ -99,6 +102,7 @@ if (userToken) { // changement du login en logout
   document.querySelector("#introduction i").style.display = "block"; // ajout des boutons modifier et positionnement "Mes Projets"
   document.querySelector("#portfolio i").style.display = "block";
   document.querySelector(".portfolio-title").style.marginLeft = "115px";
+  document.querySelector(".portfolio-title").style.marginBottom = "76px";
 
 
 //***Ajout de la fenêtre modale***//
